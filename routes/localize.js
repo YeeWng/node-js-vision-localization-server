@@ -69,7 +69,11 @@ exports.estimateGet = function(req, res) {
 			result = localizeImage.localizeImageBuffer(req.query.user, req.query.map, image);
 		}
 		*/
-		result = [1, 2, 3];
+		// result = [1, 2, 3];
+		result = new Array(3);
+		for (var i = 0; i < result.length; i++) {
+			result[i] = Math.random() * (60 - 1) + 1;
+		}
 		console.log('localization result : ' + result);
 		var jsonObj = {'estimate':result};
 		callback(null, JSON.stringify(jsonObj));
@@ -131,7 +135,11 @@ exports.estimatePost = function(req, res) {
 					result = localizeImage.localizeImageBuffer(req.body.user, req.body.map, data);
 				}
 				*/
-				result = [1, 2, 3];
+				result = new Array(3);
+				for (var i = 0; i < result.length; i++) {
+    				result[i] = randomIntInc(1, 60)
+				}
+				// result = [1, 2, 3];
 				console.log('localization result : ' + result);
 				var jsonObj = {'estimate':result};
 				callback(null, JSON.stringify(jsonObj));
