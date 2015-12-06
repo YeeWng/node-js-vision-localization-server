@@ -126,6 +126,7 @@ exports.estimatePost = function(req, res) {
 				res.redirect("/");
 				res.end();
 			} else {
+				console.log("Received img " + imageName);
 				var result;
 				/*
 				if (req.body.cx && req.body.cy && req.body.cz && req.body.radius) {
