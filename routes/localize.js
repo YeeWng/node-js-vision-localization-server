@@ -142,7 +142,8 @@ exports.estimatePost = function(req, res) {
 				}
 				// result = [1, 2, 3];
 				console.log('localization result : ' + result);
-				var jsonObj = {'estimate':result};
+				var jsonObj = {'estimate':result, 'imageid':imageName};
+				// var jsonObj = [{'estimate':result}, {'filename':imageName}];
 				callback(null, JSON.stringify(jsonObj));
 			}
 		});
