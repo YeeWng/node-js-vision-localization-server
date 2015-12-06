@@ -137,7 +137,7 @@ exports.estimatePost = function(req, res) {
 				*/
 				result = new Array(3);
 				for (var i = 0; i < result.length; i++) {
-    				result[i] = randomIntInc(1, 60)
+					result[i] = Math.random() * (100 - 90) + 90;
 				}
 				// result = [1, 2, 3];
 				console.log('localization result : ' + result);
