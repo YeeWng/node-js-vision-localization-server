@@ -7,6 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , localize = require('./routes/localize')
+  , beacon = require('./routes/beacon')
   , http = require('http')
   , path = require('path');
 
@@ -32,6 +33,8 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/localize', localize.estimateGet);
 app.post('/localize', localize.estimatePost);
+app.get('/beacon', beacon.estimateGet);
+app.post('/beacon', beacon.estimatePost);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
