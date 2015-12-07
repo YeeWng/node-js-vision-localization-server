@@ -44,7 +44,6 @@ exports.estimateGet = function(req, res) {
 	}
 	
 	async.waterfall([ function(callback) {
-		// req.query.beacon;
 		// console.log(req.query.beacon);
 		callback(null, req.query.beacon);
 
@@ -67,7 +66,12 @@ exports.estimateGet = function(req, res) {
 		}
 		console.log('localization result : ' + result);
 		var jsonObj = {'estimate':result};
+		if (req.query.flg) {
+			jsonObj = {'flg':null};
+		}
 		callback(null, JSON.stringify(jsonObj));
+
+
 	} ], function(err, result) {
 		if (err) {
 			sendErrorResponse(500, err.message);
